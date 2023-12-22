@@ -5,7 +5,7 @@
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="SubNPhoenix lol 游戏助手" Height="160" Width="400">
+        Title="SubNPhoenix lol 游戏助手" Height="200" Width="400">
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Loaded">
             <behaviors:InvokeCommandAction Command="{Binding LoadCommandAsync}"></behaviors:InvokeCommandAction>
@@ -15,6 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <CheckBox Content="自动接受游戏" 
@@ -34,7 +35,13 @@
                     Width="120" VerticalAlignment="Center"></Button>
         </StackPanel>
 
-        <TextBlock Text="{Binding GameStatus,StringFormat=游戏状态 : {0}}"  Grid.Row="2" FontSize="15" Margin="10"
+        <TextBlock Text="{Binding GameStatus,StringFormat=游戏状态 : {0}}"  Grid.Row="3" FontSize="15" Margin="10"
                    HorizontalAlignment="Right"></TextBlock>
+
+        <StackPanel Orientation="Vertical" Grid.Row="2" VerticalAlignment="Center">
+            <TextBlock>更新下载以及源码地址：
+            <Hyperlink NavigateUri="https://github.com/BruceQiu1996/SubNPhoenix" Click="Hyperlink_Click">https://github.com/BruceQiu1996/SubNPhoenix</Hyperlink>
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
